@@ -1,5 +1,5 @@
 # pySpectralTriad
-Graphical Visualization of Spectral Response from a SparkFun AS7265x Spectral Triad module using Python 2.7.x
+Graphical Visualization of Spectral Response from a <a href="https://www.sparkfun.com/products/15050">SparkFun AS7265x Spectral Triad module</a> using Python 2.7.x
 
 
 <b>pySpectralTriadsimpleGraph.py</b> : Simple red 2D Plot with autoscaling
