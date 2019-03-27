@@ -6,5 +6,5 @@ Graphical Visualization of Spectral Response from a <a href="https://www.sparkfu
 
 ![Screenshot](docs/spectre_app.png)
 <hr>
-<b>Disclaimer:</b> Never learned Python, so there is probably 1000 ways to do it better and cleaner. I just don't care<br>
+<b>Disclaimer:</b> Never learned Python, so there are probably 1000 ways to do it better and cleaner.<br>
             Code is provided as is, under MIT License, because I can't stand viral licences!
