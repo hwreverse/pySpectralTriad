@@ -1,4 +1,4 @@
-**Arduino Apps**
+# Arduino Apps
 
 all apps must adhere to giving following output:
 18 comma separated single prcision values followed by CRLF
