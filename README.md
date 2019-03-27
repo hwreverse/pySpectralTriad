@@ -5,3 +5,5 @@ Graphical Visualization of Spectral Response from a SparkFun AS7265x Spectral Tr
             Code is provided as is.
 
 <b>pySpectralTriadsimpleGraph.py</b> : Simple red 2D Plot with autoscaling
+
+![Screenshot](docs/spectre_app.png)
