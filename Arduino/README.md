@@ -1,8 +1,8 @@
 # Arduino Apps
 
-all apps must adhere to giving following output:
+All apps must adhere to giving following output:
 <br>18 comma separated single prcision values followed by CRLF
-<br>like that:
+<br>Like that:
 ```
 24.58,793.76,1255.85,70.70,102.73,930.16,148.91,122.73,56.81,120.92,48.57,48.87,189.25,191.56,25.23,46.14,17.69,17.42
 49.16,798.52,1257.76,65.59,102.73,930.85,133.57,98.84,57.21,106.47,48.57,43.99,234.81,192.55,27.93,46.98,17.69,19.74
