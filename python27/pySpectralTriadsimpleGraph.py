@@ -5,10 +5,10 @@ from drawnow import *
 from serial import Serial
 
  
-spectreData = serial.Serial("COM7", 115200) 
+spectreData = serial.Serial("COM7", 115200) #Cchange COM7 to the right port - under Linux it will look more like "/dev/ttyACMx"... 
  
 spectreReadings = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,] 
-defaultYLimit = 1024
+defaultYLimit = 1023
  
 plt.ion()     
  
@@ -26,11 +26,11 @@ while True:
 		pass            
 	spectreString = spectreData.readline()
 	spectreList = spectreString.split(",")
-	if(len(spectreList)==18):
+	if(len(spectreList)==18): # we have 3 x 6 measure points, so ...
 		for num, value in enumerate(spectreList,start=0):
 			spectreReadings[num]=float(value)
 			
-		defaultYLimit=max(spectreReadings)+2
+		defaultYLimit=max(spectreReadings)+2 # cosmetics , just used to
 		drawnow(doPlot)
 		
 	
