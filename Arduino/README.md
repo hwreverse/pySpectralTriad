@@ -9,7 +9,7 @@
 ### All apps must adhere to giving following output:
 
 <br>
-- 18 comma separated single prcision values followed by CRLF<br>
+- 18 comma separated single precision values followed by CRLF<br>
 <br>
 
 **Like that:**
