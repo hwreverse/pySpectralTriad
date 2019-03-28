@@ -3,6 +3,8 @@
 - **spectralTriadBulb:** measurements done with illumination by the 3 LEDs on the module<br>
 - **spectralTriadnoBulb:** measurements done without illumination by the LEDs<br>
 
+Apps adapted from SparkFun examples (removed user interaction, removed the last ",")
+
 <br>
 
 
