@@ -20,6 +20,7 @@ void setup() {
 
 void loop() {
   //sensor.takeMeasurementsWithBulb();
+  sensor.takeMeasurements();
   
   Serial.print(sensor.getCalibratedA());
   Serial.print(",");
