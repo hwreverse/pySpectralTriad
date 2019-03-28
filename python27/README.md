@@ -4,3 +4,6 @@
 
 ![2D Plot](../docs/spectre_2dplot.png)
 
+- **pySpectralTriadsimpleGraph.py:** Cubic 2d interpolation plot with autoscale <br>
+
+![2D Interpolated Plot](../docs/spectre_2dspline.png)
