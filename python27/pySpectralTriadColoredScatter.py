@@ -10,7 +10,11 @@ spectreData = serial.Serial("COM7", 115200) # replace by your real comport, on L
 spectreData.reset_input_buffer()
 resolution = 1000
 
-mp=interp1d([410,610,680,730,760,860,940],[0,8,10,12,13,15,17])
+
+
+loop=True
+
+mp=interp1d([410,610,680,730,760,860,940],[0,8,10,12,13,15,17]) #mapping the sensor wavelenghts to the linear space (sometimes delta=25 sometimes 35 or 50...
  
 spectreReadings = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,]
 spectreWavelenghts =[410,435,460,485,510,535,560,585,610,645,680,705,730,760,810,860,900,940] 
@@ -43,10 +47,24 @@ cmap = matplotlib.colors.LinearSegmentedColormap.from_list("", colors)
 
 fig,ax=plt.subplots() 	
 
-plt.ion()     
+plt.ion()   
+  
+def handle_close(evt):
+	spectreData.reset_input_buffer()
+	plt.ioff()
+	plt.close()
+	global loop
+	loop=False
+	#print("close event")
+	#exit()
+	#sys.exit()
 
- 
 def doPlot(): 
+	
+
+
+	fig.canvas.mpl_connect('close_event', handle_close) # figured out finally how to close the "groundhog" window
+
 	
 	plt.ylim(0,defaultYLimit)                            
 	plt.title('Spectral Response')           
@@ -60,15 +78,15 @@ def doPlot():
 	plt.scatter(wLspace,f(mp(wLspace)), c=wLspace, norm=norm, cmap=cmap)
 	sc = ax.scatter(wLspace,f(mp(wLspace)), c=wLspace, norm=norm, cmap=cmap)
 	fig.colorbar(sc, orientation="horizontal")
-		
+	#plt.draw()	
 	plt.show() 
 	
-while True:            
+while (loop):            
 	while (spectreData.inWaiting()== 0):        
 		pass            
 	spectreString = spectreData.readline()
 	spectreList = spectreString.split(",")
-	#print(len(spectreList)) #debug
+	
 	if(len(spectreList)==18):
 		for num, value in enumerate(spectreList,start=0):
 			spectreReadings[num]=float(value)
@@ -79,4 +97,7 @@ while True:
 		f=InterpolatedUnivariateSpline(x,spectreReadings)
 
 		drawnow(doPlot)
+	
+
+print(".")
 	
