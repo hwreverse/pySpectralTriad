@@ -1,3 +1,10 @@
+"""
+Author: 	HWReverse
+Twitter: 	@r0_hw aka HWR0
+GitHub:		https://github.com/hwreverse/
+
+"""
+
 import serial  
 import numpy   as np
 import matplotlib.pyplot as plt  
