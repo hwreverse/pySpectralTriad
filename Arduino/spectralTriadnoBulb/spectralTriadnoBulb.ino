@@ -1,4 +1,9 @@
 // Code works in Arduino and on Teensy (first I2C=19,20)
+// The alphabetical sequence of channels does not completlely correspond
+// to the spectral sequence.  
+// The spectral sequence of the channels is A,B,C,D,E,F,G,H,R,I,S,J,T,U,V,W,K,L
+// see the data sheets
+
 #include "SparkFun_AS7265X.h" //Get the Library with the Librarymanager !
 AS7265X sensor;
 
@@ -39,19 +44,15 @@ void loop() {
   Serial.print(",");
   Serial.print(sensor.getCalibratedH());
   Serial.print(",");
-  Serial.print(sensor.getCalibratedI());
-  Serial.print(",");
-  Serial.print(sensor.getCalibratedJ());
-  Serial.print(",");
-  Serial.print(sensor.getCalibratedK());
-  Serial.print(",");
-  Serial.print(sensor.getCalibratedL());
-  Serial.print(",");
-
   Serial.print(sensor.getCalibratedR());
+  Serial.print(",");
+  Serial.print(sensor.getCalibratedI());
   Serial.print(",");
   Serial.print(sensor.getCalibratedS());
   Serial.print(",");
+  Serial.print(sensor.getCalibratedJ());
+  Serial.print(",");
+
   Serial.print(sensor.getCalibratedT());
   Serial.print(",");
   Serial.print(sensor.getCalibratedU());
@@ -59,6 +60,10 @@ void loop() {
   Serial.print(sensor.getCalibratedV());
   Serial.print(",");
   Serial.print(sensor.getCalibratedW());
+  Serial.print(",");
+  Serial.print(sensor.getCalibratedK());
+  Serial.print(",");
+  Serial.print(sensor.getCalibratedL());
 
   Serial.println();
 }
